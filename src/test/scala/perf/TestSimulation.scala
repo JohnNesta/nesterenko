@@ -25,7 +25,12 @@ class TestSimulation extends Simulation {
   /> -->
 
   setUp(
-    CommonScenario().inject(atOnceUsers(1)
+    CommonScenario().inject(
+      incrementUsersPerSec(0.13)
+        .times(10)
+        .eachLevelLasting(120)
+        .startingFrom(0)
+        .separatedByRampsLasting(1)
     )
   ).protocols(httpProtocol)
 }

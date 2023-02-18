@@ -27,6 +27,7 @@ class CommonScenario {
       .exec(find_flight_step2)
       .exec(payment_details)
       .exec(itinerary)
+      .exec(logOut)
   }
 
   val mainScenario = scenario("mainScenario")
